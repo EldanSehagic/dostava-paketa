@@ -47,5 +47,10 @@ public class Main {
         }else{
             System.out.println("Posiljka sa Tracking brojem: " + trBroj + "ne postoji.");
         }
+        double ukupno = 0;
+        for(Posiljka pos : dostava.values()){
+            ukupno+=pos.izracunajBaznuCijenu();
+        }
+        System.out.println("Ukupna cijena svih posiljki: " + ukupno);
     }
 }
