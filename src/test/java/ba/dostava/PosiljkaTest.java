@@ -11,4 +11,12 @@ public class PosiljkaTest {
         assertEquals(10,p.getTezinaKG());
         assertEquals(50,p.getUdaljenostKm());
     }
+
+    @Test
+    void testKreiranjeEkspresPaketa(){
+        EkspresPaket p = new EkspresPaket("E001",5,30);
+        assertEquals("E001",p.getTrackingNumber());
+        assertEquals(5,p.getTezinaKG());
+        assertEquals(30,p.getUdaljenostKm());
+    }
 }
