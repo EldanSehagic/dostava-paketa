@@ -2,6 +2,7 @@ package ba.dostava;
 
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class PosiljkaTest {
     @Test
@@ -46,5 +47,17 @@ public class PosiljkaTest {
         EkspresPaket ep = new EkspresPaket("E002",3,10);
         ep.azurirajStatus("U transportu");
         assertEquals("U transportu",ep.getStatus());
+    }
+
+    //sada idu exception slucajevi
+    @Test
+    void testExceptionZaNeispravanTrackingNumber(){
+        Exception exception = assertThrows(IllegalArgumentException.class, () -> {
+            Paket p = new Paket("",50,20);
+            if(p.getTrackingNumber().isEmpty()){
+                throw new IllegalArgumentException("Tracking number ne moze biti prazan");
+            }
+        });
+        assertEquals("Tracking number ne moze biti prazan",exception.getMessage());
     }
 }
