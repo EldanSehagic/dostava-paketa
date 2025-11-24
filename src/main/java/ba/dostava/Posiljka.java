@@ -3,6 +3,7 @@ package ba.dostava;
 public abstract class Posiljka {
     protected String trackingNumber;
     protected double tezinaKG;
+    protected String status;
 
     public Posiljka( String trackingNumber,double tezinaKG) {
         this.trackingNumber = trackingNumber;
@@ -18,5 +19,13 @@ public abstract class Posiljka {
 
     public double getTezinaKG() {
         return tezinaKG;
+    }
+
+    public void azurirajStatus(String status){
+        this.status=status;
+    }
+
+    public String getStatus() {
+        return status;
     }
 }
