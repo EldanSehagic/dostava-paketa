@@ -8,4 +8,7 @@ public abstract class Posiljka {
         this.tezinaKG = tezinaKG;
         this.trackingNumber = trackingNumber;
     }
+
+    //apstraktna metoda
+    public abstract double izracunajBaznuCijenu();
 }
