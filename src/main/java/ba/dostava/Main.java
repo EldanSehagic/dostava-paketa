@@ -2,6 +2,7 @@ package ba.dostava;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
@@ -30,6 +31,21 @@ public class Main {
             System.out.println("Status: " + pos.getStatus());
             System.out.println("Cijena: " + pos.izracunajBaznuCijenu());
             System.out.println("----------------------------");
+        }
+        //Pronalazk posiljke po tracking broju
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Unesite tracking broj za pretragu: ");
+        String trBroj = sc.nextLine();
+
+        if(dostava.containsKey(trBroj)){
+            Posiljka pos = dostava.get(trBroj);
+            String tip=(pos instanceof EkspresPaket) ? "Ekspresni paket" : "Obicni paket";
+            System.out.println("Tracking Number: " + pos.getTrackingNumber() );
+            System.out.println("Tip: " + tip);
+            System.out.println("Status: " + pos.getStatus());
+            System.out.println("Cijena dostave: " + pos.izracunajBaznuCijenu());
+        }else{
+            System.out.println("Posiljka sa Tracking brojem: " + trBroj + "ne postoji.");
         }
     }
 }
