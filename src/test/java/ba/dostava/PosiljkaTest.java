@@ -60,4 +60,15 @@ public class PosiljkaTest {
         });
         assertEquals("Tracking number ne moze biti prazan",exception.getMessage());
     }
+
+    @Test
+    void testExceptionZaNegativnuTezinu(){
+        Exception exception = assertThrows(IllegalArgumentException.class, () -> {
+            Paket p = new Paket("P003",-5,20);
+            if(p.getTezinaKG()<0){
+                throw new IllegalArgumentException("Tezina ne moze biti negativna");
+            }
+        });
+        assertEquals("Tezina ne moze biti negativna",exception.getMessage());
+    }
 }
