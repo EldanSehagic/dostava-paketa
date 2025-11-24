@@ -19,4 +19,32 @@ public class PosiljkaTest {
         assertEquals(5,p.getTezinaKG());
         assertEquals(30,p.getUdaljenostKm());
     }
+
+    @Test
+    void testCijenaPaketa(){
+        Paket p = new Paket("P001",10,50);
+        double expected = 10 * 1.5 + 50 * 0.2; //25
+        assertEquals(expected,p.izracunajBaznuCijenu());
+    }
+
+    @Test
+    void testCijenaEkspresPaketa(){
+        EkspresPaket ep = new EkspresPaket("E001",10,50);
+        double expected = (10 * 1.5 + 50 * 0.2)*1.5;//37,5
+        assertEquals(expected,ep.izracunajBaznuCijenu());
+    }
+
+    @Test
+    void testStatusPaketa(){
+        Paket p = new Paket("P002",50,20);
+        p.azurirajStatus("U skladistu");
+        assertEquals("U skladistu",p.getStatus());
+    }
+
+    @Test
+    void testStatusEkspresPaketa(){
+        EkspresPaket ep = new EkspresPaket("E002",3,10);
+        ep.azurirajStatus("U transportu");
+        assertEquals("U transportu",ep.getStatus());
+    }
 }
