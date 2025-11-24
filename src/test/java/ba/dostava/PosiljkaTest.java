@@ -5,7 +5,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class PosiljkaTest {
     @Test
-    void testKreiranjPaketa(){
+    void testKreiranjePaketa(){
         Paket p = new Paket("P001",10,50);
         assertEquals("P001",p.getTrackingNumber());
         assertEquals(10,p.getTezinaKG());
