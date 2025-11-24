@@ -11,4 +11,12 @@ public abstract class Posiljka {
 
     //apstraktna metoda
     public abstract double izracunajBaznuCijenu();
+
+    public String getTrackingNumber() {
+        return trackingNumber;
+    }
+
+    public double getTezinaKG() {
+        return tezinaKG;
+    }
 }
