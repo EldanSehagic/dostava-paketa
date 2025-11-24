@@ -11,5 +11,10 @@ public class Main {
         Paket p2 = new Paket("P002",20,20);
         EkspresPaket ep1 = new EkspresPaket("E001",8,40);
         EkspresPaket ep2 = new EkspresPaket("E002",2,20);
+
+        p1.azurirajStatus("U skladistu");
+        p2.azurirajStatus("U transportu");
+        ep1.azurirajStatus("Isporuceno");
+        ep2.azurirajStatus("U transporti");
     }
 }
