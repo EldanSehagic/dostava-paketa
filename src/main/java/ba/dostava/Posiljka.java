@@ -4,9 +4,9 @@ public abstract class Posiljka {
     protected String trackingNumber;
     protected double tezinaKG;
 
-    public Posiljka(double tezinaKG, String trackingNumber) {
-        this.tezinaKG = tezinaKG;
+    public Posiljka( String trackingNumber,double tezinaKG) {
         this.trackingNumber = trackingNumber;
+        this.tezinaKG = tezinaKG;
     }
 
     //apstraktna metoda
